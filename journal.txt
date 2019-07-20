@@ -1,0 +1,4 @@
+Wed 03 Jul 2019 12:00:10 PM PDT
+
+[ ] add left wall
+[ ] plot belief

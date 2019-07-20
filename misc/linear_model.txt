@@ -1,0 +1,20 @@
+% states: x, xdot, eta, etadot
+% controls: theta
+
+g = 9.8
+m1 = 0.1
+m2 = 0.1
+l = 1.0
+F = g*(m1+m2)
+
+A = [0 1 0                 0;
+     0 0 -m2*g/m1          0;
+     0 0 0                 1;
+     0 0 -(m1+m2)*g/(l*m1) 0]
+
+B = [0; F/m1; 0; F/(l*m1)]
+
+% safety bounds
+theta in [-0.2, 0.2]
+x in [-2.0, 0.0]
+x + l*eta in [-2.0, 0.0]
