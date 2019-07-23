@@ -8,6 +8,7 @@ using Distributions
 using Random
 using Compose
 using ParticleFilters
+using Mat
 
 export
     LinearQuad,
@@ -20,7 +21,7 @@ export
     DiscretizedObsDist,
     safe_hack_actions
 
-const g = 9.81
+const g = 9.8
 
 struct HorizontalDynamicState <: FieldVector{4, Float64}
     x::Float64

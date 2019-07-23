@@ -1,3 +1,11 @@
+Mon 22 Jul 2019 05:39:41 PM PDT
+
+To get hji safety to work
+[ ] Why is data 5-dimensional?
+[ ] why won't schemeData work?
+[ ] Interpolation
+[ ] Finer grid for greater than 1.2
+
 Wed 03 Jul 2019 12:00:10 PM PDT
 
 [ ] add left wall
