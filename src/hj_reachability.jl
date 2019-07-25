@@ -17,9 +17,15 @@ struct LinearQuadValueFunction <: Function
     vfuncs::Vector{HJValueFunction{4}}
 end
 
-function LinearQuadValueFunction
+function LinearQuadValueFunction(dir::AbstractString)
+    ls = Float64[]
+    vfuncs = HJValueFunction{4}[]
+    for file in readdir(dir)
+
+    end
 end
 
 function (v::QuadValueFunction)(x::HorizontalState)
-    searchsortedfirst(v.ls, s.l)
+    i = searchsortedfirst(v.ls, s.l)
+    return vfuncs[i](HorizontalDynamicState(x))
 end

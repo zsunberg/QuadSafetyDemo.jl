@@ -28,8 +28,8 @@ if nargin <4
 end
 
 %% Grid
-grid_min = [-3; -5; -2; -5]; % Lower corner of computation domain
-grid_max = [1; 5; 2; 5];    % Upper corner of computation domain
+grid_min = [-2.5; -3; -2.5/l; -3/l]; % Lower corner of computation domain
+grid_max = [0.5; 3; 2.5/l; 3/l];    % Upper corner of computation domain
 N = ones(1,4).*numCells;
 g = createGrid(grid_min, grid_max, N);
 

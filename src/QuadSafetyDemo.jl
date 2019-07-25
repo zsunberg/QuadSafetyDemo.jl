@@ -39,7 +39,9 @@ struct HorizontalState <: FieldVector{5, Float64}
     l::Float64
 end
 StaticArrays.similar_type(::Type{HorizontalState},::Type{Float64},::Size{(5,)}) = HorizontalState
+
 HorizontalState(ds::HorizontalDynamicState, l::Float64) = HorizontalState(ds.x, ds.xdot, ds.eta, ds.etadot, l)
+HorizontalDynamicState(x::HorizontalState) = HorizontalDynamicState(x.x, x.xdot, x.eta, x.etadot)
 
 @with_kw struct LinearQuad{OM} <: POMDP{HorizontalState, Float64, Float64}
     timestep::Float64       = 0.1
