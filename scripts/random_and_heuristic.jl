@@ -17,8 +17,9 @@ let
     noise = 0.05
     m = LinearQuad(timestep=dt, obsmodel=(a,sp)->Normal(sp.x, noise))
     # policy = TimeDependentUntilSafe((b,t)->0.1*sin(5t), m)
+    safety_value = LinearQuadValueFunction("../matlab/data")
     policy = TimeDependentUntilSafe(m) do b, t
-        rand(safe_hack_actions(m,b))
+        rand(safeactions(m, safety_value, b))
     end
     up = SIRParticleFilter(m, 10_000)
     sup = StepUpdater(up)

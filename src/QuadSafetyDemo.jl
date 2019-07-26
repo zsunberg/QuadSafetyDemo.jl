@@ -8,7 +8,9 @@ using Distributions
 using Random
 using Compose
 using ParticleFilters
-using Mat
+using MAT
+using GridInterpolations
+import HDF5
 
 export
     LinearQuad,
@@ -19,7 +21,11 @@ export
     StepUpdater,
     LinearQuadResampler,
     DiscretizedObsDist,
-    safe_hack_actions
+    safe_hack_actions,
+    LinearQuadValueFunction,
+    safe_actions,
+    safest_action,
+    issafe
 
 const g = 9.8
 
@@ -151,5 +157,6 @@ include("heuristics.jl")
 include("filters.jl")
 include("obsmodels.jl")
 include("safety_hack.jl")
+include("hj_reachability.jl")
 
 end # module
