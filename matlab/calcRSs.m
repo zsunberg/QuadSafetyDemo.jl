@@ -15,7 +15,7 @@ function calcRSs(start)
         if l <= 1.4
             cells = 21
         else
-            cells = 29
+            cells = 31
         end
         [schemeData, data, tau] = underslungRS(physParams, cells);
         lastData = data(:,:,:,:,end);

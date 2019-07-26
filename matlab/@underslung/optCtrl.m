@@ -26,13 +26,13 @@ end
 %% Optimal control
 if strcmp(uMode, 'max')
   if any(obj.dims == 2)
-      uOpt{1} = (multiplier>=0)*obj.thetaMax +...
+      uOpt{1} = (multiplier>0)*obj.thetaMax +...
           (multiplier<0)*obj.thetaMin;
   end
 
 elseif strcmp(uMode, 'min')
   if any(obj.dims == 2)
-      uOpt{1} = (multiplier>=0)*obj.thetaMin +...
+      uOpt{1} = (multiplier>0)*obj.thetaMin +...
           (multiplier<0)*obj.thetaMax;
   end
 else
