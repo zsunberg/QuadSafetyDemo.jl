@@ -1,7 +1,7 @@
 function POMDPModelTools.render(m::LinearQuad, step; maxghosts=typemax(Int))
     s = step.s
     z = 1.5
-    theta = step.a
+    theta = get(step, :a, 0.0)
 
     if haskey(step, :b)
         if step.b isa Pair{Int}

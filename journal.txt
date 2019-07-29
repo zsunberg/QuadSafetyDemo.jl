@@ -1,8 +1,20 @@
+Mon 29 Jul 2019 04:22:28 PM PDT
+
+[ ] Make julia hj reachability check parameters!!!
+
+Mon 29 Jul 2019 02:58:19 PM PDT
+
+[ ] try MCVI
+[ ] Why isn't safe set working?
+    - time discretization
+    - l discretization
+    - action space is not rich enough
+
 Thu 25 Jul 2019 11:53:43 AM PDT
 
 [ ] See if safe set is always bigger with larger l
-[ ] Check observability
-[ ] Try epsilon
+[X] Check observability
+[X] Try epsilon
 
 Mon 22 Jul 2019 05:39:41 PM PDT
 

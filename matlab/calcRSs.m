@@ -8,7 +8,7 @@ function calcRSs(start)
     physParams.m1 = 0.1;
     physParams.m2 = 0.1;
     physParams.leftWall = -2.0;
-    physParams.maxTheta = 0.2
+    physParams.maxTheta = 0.05
     for l = start:0.05:1.0
         fprintf('l=%f\n', l);
         physParams.l = l
@@ -21,7 +21,7 @@ function calcRSs(start)
         lastData = data(:,:,:,:,end);
         safegrid = rmfield(schemeData.grid, 'bdry')
         toc
-        fname = sprintf('data/l_%03d.mat', int64(100*l));
+        fname = sprintf('data/theta_%03d/l_%03d.mat', int64(100*physParams.maxTheta), int64(100*l));
         fprintf('saving to %s...\n', fname);
         save(fname, 'physParams', 'safegrid', 'lastData');
         fprintf('done\n');

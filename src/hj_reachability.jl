@@ -21,11 +21,18 @@ struct LinearQuadValueFunction <: Function
     vfuncs::Vector{HJValueFunction{4}}
 end
 
-function LinearQuadValueFunction(dir::AbstractString)
+function LinearQuadValueFunction(m::LinearQuad, dir::AbstractString)
     ls = Float64[]
     vfuncs = HJValueFunction{4}[]
     for filename in readdir(dir)
         matopen(joinpath(dir, filename)) do f
+            p = read(f, "physParams")
+            @assert minimum(actions(m)) <= -p["maxTheta"]
+            @assert maximum(actions(m)) >= p["maxTheta"]
+            @assert p["m1"] == m.m1
+            @assert p["m2"] == m.m2
+            @assert p["leftWall"] >= m.leftwall
+            @assert p["grav"] == g
             push!(ls, read(f, "physParams")["l"])
             push!(vfuncs, HJValueFunction(f))
         end

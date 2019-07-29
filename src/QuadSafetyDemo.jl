@@ -148,7 +148,7 @@ end
 Base.rand(rng::AbstractRNG, d::QuadInitialDist) = HorizontalState(d.x, 0.0, 0.0, 0.0, rand(rng, d.ldist))
 
 POMDPs.initialstate_distribution(m::LinearQuad) = QuadInitialDist()
-POMDPs.actions(m::LinearQuad) = (-0.05,0.0,0.05)
+POMDPs.actions(m::LinearQuad) = (-0.2,0.0,0.2)
 # POMDPs.actions(m::LinearQuad) = (-0.05,0.05)
 POMDPs.discount(m::LinearQuad) = 0.95
 
