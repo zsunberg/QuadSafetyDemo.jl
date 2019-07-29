@@ -28,8 +28,8 @@ if nargin <4
 end
 
 %% Grid
-grid_min = [-2.2; -2; -2.2/l; -2/l]; % Lower corner of computation domain
-grid_max = [0.2; 2; 2.2/l; 2/l];    % Upper corner of computation domain
+grid_min = [-2.2; -2; -pi/2; -2/l]; % Lower corner of computation domain
+grid_max = [0.2; 2; pi/2; 2/l];    % Upper corner of computation domain
 N = ones(1,4).*numCells;
 g = createGrid(grid_min, grid_max, N);
 
@@ -98,7 +98,7 @@ tau = t0:dt:tMax;
 
 %% Compute value function
 
-HJIextraArgs.visualize = true; %show plot
+HJIextraArgs.visualize = false; %show plot
 HJIextraArgs.fig_num = 2; %set figure number
 HJIextraArgs.plotData.plotDims = [1 0 1 0];
 HJIextraArgs.plotData.projpt = [0 0];

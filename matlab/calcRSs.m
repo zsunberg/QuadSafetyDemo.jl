@@ -1,6 +1,6 @@
 function calcRSs(start)
     if nargin < 1
-        start = 0.2
+        start = 0.1
     end
 
     tic
@@ -9,7 +9,7 @@ function calcRSs(start)
     physParams.m2 = 0.1;
     physParams.leftWall = -2.0;
     physParams.maxTheta = 0.2
-    for l = start:0.2:2
+    for l = start:0.05:1.0
         fprintf('l=%f\n', l);
         physParams.l = l
         if l <= 1.4
